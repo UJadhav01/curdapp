@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "curdapp": {
+    "angular-14-firebase-crud": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/curdapp",
+            "outputPath": "dist/angular-14-firebase-crud",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "curdapp:build:production"
+              "browserTarget": "angular-14-firebase-crud:build:production"
             },
             "development": {
-              "browserTarget": "curdapp:build:development"
+              "browserTarget": "angular-14-firebase-crud:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "curdapp:build"
+            "browserTarget": "angular-14-firebase-crud:build"
           }
         },
         "test": {
