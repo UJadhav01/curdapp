@@ -1,0 +1,56 @@
+<div class="submit-form">
+  <h3>Add student data</h3>
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="title">Student ID :</label>
+      <input
+        type="number"
+        class="form-control"
+        id="studId"
+        required
+        [(ngModel)]="student.id"
+        name="studId"
+      />
+    </div>
+    <div class="form-group">
+      <label for="title">Student Name :</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        required
+        [(ngModel)]="student.fullName"
+        name="fullName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="title">Collage Name :</label>
+      <input
+        type="text"
+        class="form-control"
+        id="collageName"
+        required
+        [(ngModel)]="student.collageName"
+        name="collageName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="stream">Student stream/field</label>
+      <input
+        class="form-control"
+        id="stream"
+        required
+        [(ngModel)]="student.stream"
+        name="stream"
+      />
+    </div>
+
+    <button (click)="saveStudRecords()" class="btn btn-success mt-3">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newStudRecord()">Add</button>
+  </div>
+</div>
