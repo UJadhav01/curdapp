@@ -1,0 +1,62 @@
+<div *ngIf="currentStudent" class="edit-form">
+  <h4>Update Student Record</h4>
+  <form>
+    <div class="form-group">
+      <label for="title">Student ID :</label>
+      <input
+        type="number"
+        class="form-control"
+        id="id"
+        [(ngModel)]="currentStudent.id"
+        name="id"
+      />
+    </div>  <div class="form-group">
+      <label for="title">Student Name :</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        [(ngModel)]="currentStudent.fullName"
+        name="fullName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="title">Collage Name :</label>
+      <input
+        type="text"
+        class="form-control"
+        id="collageName"
+        [(ngModel)]="currentStudent.collageName"
+        name="collageName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="stream"> Student Stream/Field</label>
+      <input
+        type="text"
+        class="form-control"
+        id="stream"
+        [(ngModel)]="currentStudent.stream"
+        name="stream"
+      />
+    </div>
+
+
+
+  </form>
+
+
+  <button class="badge badge-danger mr-2" (click)="deleteStudRecord()">
+    Delete
+  </button>
+
+  <button type="submit" class="badge badge-success" (click)="updateStudRecord()">
+    Update
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentStudent">
+  <br />
+  <p>Cannot access this student record...</p>
+</div>
