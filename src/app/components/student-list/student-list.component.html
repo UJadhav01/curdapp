@@ -1,0 +1,43 @@
+<div class="list row">
+  <div class="col-md-10">
+    <h4>Student Record List</h4>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Collage Name</th>
+          <th>Stream</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let studData of students; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveStudent(studData, i)">
+          <td>{{studData.id}}</td>
+          <td>{{studData.fullName}}</td>
+          <td>{{studData.collageName}}</td>
+          <td>{{studData.stream}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllStudRecords()">
+      Remove All Records
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentStudent">
+      <app-tutorial-details
+        (refreshList)="refreshList()"
+        [student]="currentStudent"
+      ></app-tutorial-details>
+    </div>
+
+    <div *ngIf="!currentStudent">
+      <br />
+<p>Please choose student-record or add student-record</p>
+    </div>
+  </div>
+</div>
